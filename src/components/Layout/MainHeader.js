@@ -20,13 +20,12 @@ export default function MainHeader() {
   return (
     <>
       {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
-      {drawerIsOpen && (
-        <SideDrawer onClick={closeDrawerHandler}>
-          <nav className="nav-side-drawer">
-            <NavLinks />
-          </nav>
-        </SideDrawer>
-      )}
+
+      <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
+        <nav className="nav-side-drawer">
+          <NavLinks />
+        </nav>
+      </SideDrawer>
 
       <header className="header">
         <Link to="/" className="nav-brand">
